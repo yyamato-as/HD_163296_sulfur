@@ -151,7 +151,7 @@
 %%
 %% If you wish, you may supply running head information, although
 %% this information may be modified by the editorial offices.
-\shorttitle{\textcolor{red}{short title here}}
+\shorttitle{H$_2$S in HD 163296}
 \shortauthors{Yamato et al.}
 %%
 %% You can add a light gray and diagonal water-mark to the first page 
@@ -169,7 +169,7 @@
 
 \begin{document}
 
-\title{\textcolor{red}{title here}}
+\title{Evidence of Hydrogen Sulfide Ice in the Inner Disk around HD~163296}
 
 %% LaTeX will automatically break titles if they run longer than
 %% one line. However, you may use \\ to force a line break if
@@ -240,8 +240,7 @@
 
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
-
-\textcolor{red}{abstract here.} 250 word limit
+ 250 word limit
 
 \end{abstract}
 
@@ -271,8 +270,41 @@
 \section{Introduction} \label{sec:intro}
 
 \section{Observation} \label{sec:observation}
+We observed the HD~163296 disk in Band 7 during ALMA Cycle 8 (project code: 2021.1.00535.S, PI: Y, Yamato). Observations were carried out in four execution blocks. Table \ref{tab:observations} summarizes the observational details, including observation dates, number of antennas, on-source integration time, mean precepitable water vapor (PWV), baseline coverage, angular resolution, maximum recoverable scale (MRS), and calibrator information.  
+
+The pipeline calibrations were performed by ALMA staff using the standard ALMA pipeline. Subsequent self-calibration and imaging were performed using the Common Astronomy Software Applications \citep[CASA;][]{CASA} modular version 6.6.4.34. The continuum visibilities were produced by averaging the line-free channels specified by visually inspecting the data cubes delivered from the observatory. The continuum emission peak on the image from each execution block was aligned to a common direction, $\alpha_\mathrm{ICRS} = 17^{\mathrm{h}}56^{\mathrm{m}}21\fs277, \delta_\mathrm{ICRS} = -21^{\mathrm{d}}57^{\mathrm{m}}22\fs73$, which was used as the disk center in the following analysis. Then, seven rounds of phase-only self-calibration and one round of amplitude self-calibration were performed, resulting in a signal-to-noise ratio (S/N) increase by a factor of ${\approx}9$. The solutions were then applied to the entire dataset. The continuum emission was finally subtracted from the line visibilities by fitting a first-order polynomial to line-free channels using the CASA task \texttt{uvcontsub}.
+
+The nth spectral window in baseband m covered SO $3\Sigma\,J_N=7_7$--$6_6$ line ($E_\mathrm{u}=71$\,K), while H$_2$S $3_{3,0}$--$3_{2,1}$ line ($E_\mathrm{u}=169$\,K) was covered by the wide spectral window originally dedicated for continuum aquisition. The continuum window also covers two SO$_2$ lines, which were not detected.
+
+\begin{deluxetable*}{lcccccccc}
+\label{tab:observations}
+% \tablewidth{\textwidth}
+\tablecaption{Observational Details}
+\tablehead{\colhead{Date} & \colhead{\# of Ant.} & \colhead{On-source Int.} & \colhead{PWV}  & \colhead{Baseline} & \colhead{Ang. Res.} & \colhead{MRS} & \multicolumn{2}{c}{Calibrators}\\
+\cline{8-9}
+\colhead{} & \colhead{} & \colhead{(min)} & \colhead{(mm)} & \colhead{(m)} & \colhead{($\arcsec$)} & \colhead{($\arcsec$)} & \colhead{Bandpass/Amplitude} & \colhead{Phase}}
+\startdata
+2022 Jun. 9 & 41 & 43 & 0.7 & 15--783.5 & 0.3 & 4.2 & J1924-2914 & J1742-1517 \\
+2022 Jun. 10 & 42 & 43 & 0.1 & 15--1213 & 0.3 & 4.1 & J1924-2914 & J1742-1517 \\
+2022 Jun. 11 & 43 & 43 & 0.4 & 15--1213 & 0.3 & 4.3 & J1924-2914 & J1742-1517 \\
+2022 Jun. 11 & 43 & 43 & 0.4 & 15--1213 & 0.3 & 4.3 & J1924-2914 & J1742-1517 
+\enddata
+\end{deluxetable*}
 
 \section{Analysis \& results} \label{sec:analysis}
+
+\begin{equation}
+    f(v, r) = \frac{1}{\sqrt{v_\mathrm{max}^2 - v^2}}, \\
+    v_\mathrm{max} = \sqrt{\frac{GM_\star}{r}}\sin i
+\end{equation}
+
+\begin{equation}
+    F(v) = \int_0^{R_\mathrm{out}} B_\nu(T_\mathrm{ex})(1 - e^{-\tau_\nu}) f(v, r) dr
+\end{equation}
+
+\begin{equation}
+    F(v) = \int_0^{R_\mathrm{out}} B_\nu(T_\mathrm{ex})(1 - e^{-\tau_\nu}) f(v, r) dr
+\end{equation}
 
 \section{Discussion} \label{sec:discussion}
 
@@ -294,7 +326,7 @@
 %% parentheses, after the keyword, but they are not verified.
 
 \vspace{5mm}
-\facilities{\textcolor{red}{facilities used here}}
+\facilities{ALMA}
 
 %% Similar to \facility{}, there is the optional \software command to allow 
 %% authors a place to specify which programs were used during the creation of 
